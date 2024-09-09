@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <link rel="stylesheet" href="assets/CSS/styles.css">
+  <script defer src="assets/Javascript/imageChange.js"></script>
+  <script defer src="assets/Javascript/validate.js"></script>
+</head>
+<body>
+
+  <main>
+    <!-- Sign-up form start -->
+     <section class="sign-up-window">
+      <picture>
+        <img src="assets/images/illustration-sign-up-mobile.svg" alt="image placeholder">
+      </picture>
+      <section class="text-content">
+        <h1>Stay updated!</h1>
+        <p>
+        Join 60,000+ product managers receiving monthly updates on:
+        </p>
+              <ul>
+        <li>Product discovery and building what matters</li>
+        <li>Measuring to ensure updates are a success</li>
+        <li>And much more!</li>
+              </ul>
+        <form>
+          <label for="">Email address</label>
+          <span class="error-message hidden">Valid email required</span>
+          <input type="email" placeholder="email@company.com">
+          <button class="btn">Subscribe to monthly newsletter</button>
+        </form>
+      </section>
+    </section>
+    <!-- Sign-up form end -->
+    <!-- Success message start -->
+    <section class="sign-up-success hidden">
+      <img src="assets/images/icon-success.svg" alt="Success icon">
+      <h1>Thanks for subscribing!</h1>
+      <p>
+        A confirmation email has been sent to <span id="email">ash@loremcompany.com</span>.
+        Please open it and click the button inside to confirm your subscription.
+      </p>
+      <button class="btn success-btn">Dismiss message</button>
+    </section>
+    <!-- Success message end -->
+    
+    <footer>
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://www.frontendmentor.io/profile/temesgen-982">temesgen-982</a>.
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,248 @@
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('../fonts/Roboto-Bold.ttf');
+}
+
+:root {
+    --tomato: hsl(4, 100%, 67%);
+    --tomato-light: rgb(255, 83, 121); 
+    /* had to define this with rgb
+        it won't work otherwise */
+
+    --dark-slate-grey: hsl(234, 29%, 20%);
+    --charcoal-grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+
+    --ff-base: 'Roboto Regular', sans-serif;
+    --ff-base-bold: 'Roboto Bold', sans-serif;
+
+    --fs-paragraph: 16px;
+
+    --fw-400: 400;
+    --fw-700: 700;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--ff-base);
+    
+    min-height: 100vh;
+
+    color: var(--charcoal-grey);
+
+    background-color: var(--charcoal-grey);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+section{
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    background-color: var(--white);
+}
+
+.sign-up-window{
+    display: grid;
+}
+
+@media (min-width: 400px){
+    .sign-up-window{
+        max-width: 400px;
+    }
+    section{
+        flex: 0;
+        height: auto;
+        margin: 1em auto;
+        border-radius: 1em;
+        overflow: hidden;
+    }
+    .sign-up-success{
+        max-width: 450px;
+    }
+    section > picture{
+        width: 100%;
+    }
+    section > picture img{
+        width: 100%;
+    }
+    main > footer{
+        display: block;
+        flex: 0;
+        justify-self: end;
+    }
+}
+
+@media (min-width: 700px){
+    .sign-up-window{
+        grid-template-columns: 1fr auto;
+        gap: 1em;
+        align-items: center;
+        max-width: 800px;
+    }
+    section{
+        display: flex;
+        margin: auto;
+        padding: 1em;
+    }
+    .sign-up-window > *{
+        flex: 1;
+    }
+    .sign-up-window > picture img{
+        max-width: 300px;
+        height: 100%;
+    }
+    .sign-up-window > .text-content{
+        order: -1;
+        padding: .5em;
+    }
+}
+
+.sign-up-window img{
+    max-width: 100%;
+}
+
+.sign-up-window > .text-content{
+    display: grid;
+    align-content: center;
+    gap: 1em;
+    padding: 1.5em;
+}
+
+.text-content > h1, .sign-up-success h1{
+    font-family: var(--ff-base-bold);
+    font-size: 2.5em;
+    color: var(--dark-slate-grey);
+}
+
+.text-content > ul{
+    display: grid;
+    gap: .5em;
+    list-style: none;
+}
+
+.text-content > ul li{
+    display: grid;
+    grid-template-columns: 2em auto;
+    position: relative;
+}
+
+.text-content > ul li::before{
+    content: url('../images/icon-list.svg');
+}
+
+.text-content > p, .text-content > ul li{
+    line-height: 1.5;
+}
+
+.text-content > form{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1em;
+    margin-top: .5em;
+    font-size: 13px;
+}
+
+form > label{
+    font-family: var(--ff-base-bold);
+    font-size: var(--fs-paragraph);
+}
+
+form > .error-message{
+    text-align: end;
+    color: var(--tomato);
+}
+
+form > input, button{
+    grid-column: 1 / -1;
+    padding: 1em;
+    border-radius: 5px;
+    border: 1px solid var(--grey);
+    outline: none;
+    cursor: pointer;
+}
+
+form > input::placeholder{
+    color: var(--dark-slate-grey);
+}
+
+form > input:focus, form > input:hover{
+    border: 1px solid var(--dark-slate-grey);
+}
+
+.input-error, .input-error:focus, .input-error:hover{
+    border: 1px solid var(--tomato);
+    background: rgba(255, 126, 126, 0.2);
+}
+
+.btn{
+    background-color: var(--dark-slate-grey);
+    color: var(--white);
+    font-weight: var(--fw-700);
+    border: none;
+}
+
+.btn:hover{
+    background: linear-gradient(90deg,
+    var(--tomato-light), var(--tomato));
+    box-shadow: 0 10px 10px 0 rgba(255, 83, 121, 0.3);
+}
+
+.sign-up-success{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    justify-content: center;
+    padding: 2.5em;
+}
+
+.sign-up-success > img{
+    max-width: min-content;
+    margin-top: auto;
+}
+
+.sign-up-success p{
+    line-height: 1.5;
+}
+
+.sign-up-success > p span{
+    font-weight: var(--fw-700);
+}
+
+.sign-up-success > button{
+    margin-top: auto;
+}
+
+.hidden{
+    display: none;
+}
+
+footer { 
+    display: none; 
+    margin-top: auto;
+    margin-bottom: 1em;
+    font-size: 11px; 
+    text-align: center;
+    color: var(--white)    
+}
+footer a { 
+    color: var(--white); 
+}
