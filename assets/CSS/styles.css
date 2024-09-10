@@ -177,6 +177,7 @@ form > input, button{
     padding: 1em;
     border-radius: 5px;
     border: 1px solid var(--grey);
+    font-family: var(--ff-base);
     outline: none;
     cursor: pointer;
 }
