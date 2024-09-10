@@ -76,6 +76,7 @@ section{
     }
     .sign-up-success{
         max-width: 450px;
+        margin-top: auto;
     }
     section > picture{
         width: 100%;
